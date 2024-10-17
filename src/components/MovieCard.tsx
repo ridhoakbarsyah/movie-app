@@ -5,12 +5,9 @@ interface MovieCardProps {
 }
 
 const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
-  // State untuk menyimpan daftar film favorit
   const [favorites, setFavorites] = useState<any[]>([]);
 
-  // Fungsi untuk menambahkan film ke daftar favorit
   const addToFavorites = (movie: any) => {
-    // Periksa apakah film sudah ada di daftar favorit
     if (!favorites.some((fav) => fav.id === movie.id)) {
       setFavorites([...favorites, movie]);
       alert(`${movie.title} has been added to your favorites!`);

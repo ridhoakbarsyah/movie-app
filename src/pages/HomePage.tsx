@@ -12,7 +12,7 @@ const HomePage: React.FC = () => {
       const nowPlaying = await fetchNowPlayingMovies();
       const popular = await fetchPopularMovies();
       setNowPlayingMovies(nowPlaying);
-      setPopularMovies(popular.slice(0, 6)); // Limit 6
+      setPopularMovies(popular.slice(0, 6));
     };
     fetchMovies();
   }, []);
@@ -32,6 +32,7 @@ const HomePage: React.FC = () => {
           <MovieCard key={movie.id} movie={movie} />
         ))}
       </div>
+
       <h1>Popular Movies</h1>
       <div className="row">
         {popularMovies.map((movie) => (
